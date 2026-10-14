@@ -101,7 +101,6 @@ int main() {
                 cout << "Enter output image path: ";
                 cin >> job.filename;
             }
-
             if (!cin) {
                 cout << "Invalid input. Exiting.\n";
                 break;
@@ -398,7 +397,6 @@ int main() {
                 int amount;
                 cout << "Enter brightness adjustment: ";
                 cin >> amount;
-
                 if (!cin) {
                     cout << "Invalid input.\n";
                     break;
