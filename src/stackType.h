@@ -109,6 +109,27 @@ public:
         count--;
     }
 
+    void removeBottom() {
+        if (isEmptyStack())
+            throw std::underflow_error("Stack is empty");
+
+        if (stackTop->next == nullptr) {
+            delete stackTop;
+            stackTop = nullptr;
+            count--;
+            return;
+        }
+
+        Node* current = stackTop;
+
+        while (current->next->next != nullptr)
+            current = current->next;
+
+        delete current->next;
+        current->next = nullptr;
+        count--;
+    }
+
     int size() const {
         return count;
     }
