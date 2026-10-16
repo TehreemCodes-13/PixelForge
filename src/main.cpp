@@ -1,8 +1,10 @@
 #include <iostream>
 #include "Image.h"
+#include "HistoryManager.h"
 #include "stackType.h"
 #include "queueType.h"
 #include "ProcessingJob.h"
+#include "HistoryController.h"
 using namespace std;
 
 int main() {
@@ -10,6 +12,7 @@ int main() {
     stackType<Image> undoStack;
     stackType<Image> redoStack;
     queueType<ProcessingJob> processingQueue(20);
+    HistoryController history(50LL * 1024 * 1024);
     int choice;
     bool loaded = false;
 
